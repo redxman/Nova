@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+<!-- blueimp File Upload & Gallery styles -->
+@section Styles{
+    <environment Names="Development">
+        <link rel="stylesheet" href="~/lib/blueimp-file-upload/css/jquery.fileupload.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-file-upload/css/jquery.fileupload-ui.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery-video.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery-indicator.css" asp-append-version="true" />
+    </environment>
+    <environment Name="Staging,Production">
+        <link rel="stylesheet" href="~/Common/_Bundles/jquery-file-upload.css" asp-append-version="true" />
+    </environment>
+}
+@*<script>
+
+        $(function () {
+            $('#fileUpload').fileupload({
+                dataType: 'json',
+                done: function (e, data) {
+                    $.each(data.result.files, function (index, file) {
+                        $('<p/>').text(file.name).appendTo(document.body);
+                    });
+                }
+            });
+        });
+    </script>*@
+<script>
+    var $form = null;
+    $(function () {
+
+        $form = $('#fileupload').fileupload({
+            dataType: 'json'
+        });
+
+    });
+    $('#fileupload').addClass('fileupload-processing');
+
+</script>
+@Html.Partial("_Files")
+@section Scripts{
+    <environment Names="Development">
+        <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-tmpl/js/tmpl.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-load-image/js/load-image.all.min.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-canvas-to-blob/js/canvas-to-blob.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-image.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-audio.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-video.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery-video.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery-indicator.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/jquery.blueimp-gallery.js" asp-append-version="true"></script>
+    </environment>
+    <environment Name="Staging,Production">
+        <script src="~/Common/_bundles/jquery-file-upload.min.js" asp-append-version="true"></script>
+    </environment>
+}

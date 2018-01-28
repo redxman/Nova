@@ -1,0 +1,36 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/Common/_Bundles/jquery-file-upload.css",
+    "inputFiles": [
+      "wwwroot/lib/blueimp-file-upload/css/jquery.fileupload.css",
+      "wwwroot/lib/blueimp-file-upload/css/jquery.fileupload-ui.css",
+      "wwwroot/lib/blueimp-gallery/css/blueimp-gallery.css",
+      "wwwroot/lib/blueimp-gallery/css/blueimp-gallery-video.css",
+      "wwwroot/lib/blueimp-gallery/css/blueimp-gallery-indicator.css"
+    ],
+    "minify": {
+      "enabled": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Common/_Bundles/jquery-file-upload.js",
+    "inputFiles": [
+      "wwwroot/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js",
+      "wwwroot/lib/blueimp-tmpl/js/tmpl.js",
+      "wwwroot/lib/blueimp-load-image/js/load-image.all.min.js",
+      "wwwroot/lib/blueimp-canvas-to-blob/js/canvas-to-blob.js",
+      "wwwroot/lib/blueimp-gallery/js/blueimp-gallery.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.iframe-transport.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-process.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-image.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-audio.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-video.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-validate.js",
+      "wwwroot/lib/blueimp-file-upload/js/jquery.fileupload-ui.js",
+      "wwwroot/lib/blueimp-gallery/js/blueimp-gallery-video.js",
+      "wwwroot/lib/blueimp-gallery/js/blueimp-gallery-indicator.js",
+      "wwwroot/lib/blueimp-gallery/js/jquery.blueimp-gallery.js"
+    ]
+  }
+]

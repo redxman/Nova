@@ -1,0 +1,73 @@
+﻿@model Nova.Models.FilesViewModel
+@using Nova.Helpers
+
+@{
+    ViewBag.Title = "Show";
+}
+<!-- blueimp File Upload & Gallery styles -->
+@section Styles{
+
+    <environment Names="Development">
+        <link rel="stylesheet" href="~/lib/blueimp-file-upload/css/jquery.fileupload.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-file-upload/css/jquery.fileupload-ui.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery-video.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery-indicator.css" asp-append-version="true" />
+    </environment>
+}
+<h2>Show</h2>
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<div id="links">
+    @if (@Model.Files != null && @Model.Files.Length != 0)
+    {
+        foreach (ViewDataUploadFilesResult file in @Model.Files)
+        {
+
+            if (file.type.Equals("video/mp4"))
+            {
+
+                <a href="@file.url" title="@file.name" type="video/mp4" data-description="This is a movie."><img src="@file.thumbnailUrl" alt="@file.name"></a>
+
+
+            }
+            else
+            {
+                <a href="@file.url" title="@file.name" data-description="This is a image."><img src="@file.thumbnailUrl" alt="@file.name"></a>
+            }
+
+        }
+    }
+    else
+    {
+        <p>No files</p>
+    }
+    <!--Your files goes here-->
+</div>
+<script>
+
+    document.getElementById('links').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = { index: link, event: event },
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+
+    };
+</script>
+@section Scripts{
+    <environment Names="Development">
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery-video.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/blueimp-gallery-indicator.js" asp-append-version="true"></script>
+        <script src="~/lib/blueimp-gallery/js/jquery.blueimp-gallery.js" asp-append-version="true"></script>
+    </environment>
+}

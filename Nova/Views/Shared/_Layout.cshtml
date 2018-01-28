@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - jQuery-File-Upload.MVC5</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/common/site.css" asp-append-version="true" />
+        @RenderSection("Styles", required: false)
+        <script src="~/lib/modernizr/modernizr-2.6.2.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true"></script>
+        <script src="~/lib/respond/src/respond.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+      
+    </environment>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("jQuery-File-Upload.MVC5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Show", "Show", "FileUpload")</li>
+                    <li>@Html.ActionLink("Add", "Index", "FileUpload")</li>
+                    <li>@Html.ActionLink("Edit", "Edit", "FileUpload")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @System.DateTime.Now.Year - jQuery-File-Upload.MVC5</p>
+        </footer>
+    </div>
+
+    <environment names="Development">
+        @RenderSection("scripts", required: false)
+    </environment>
+    <environment names="Staging,Production">
+    </environment>
+
+</body>
+</html>
